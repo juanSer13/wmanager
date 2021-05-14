@@ -10,7 +10,7 @@ if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true){
 ?>
 
 
-<main>
+<main id="proy1">
 
 <h1 class="tituloApartado" id="h1">Usuario</h1>
 
@@ -58,7 +58,7 @@ if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true){
 }else{
 ?>
 
-<main>
+<main id="proy1">
 
 		<h1 class="tituloApartado" id="h1">Usuario</h1>
 

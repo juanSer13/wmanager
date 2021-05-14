@@ -9,12 +9,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WM: Workman Manager</title>
+	<title>WM: Workman Manager</title> <!--Elemento SEO-->
+    <meta name="description" content="Esto es una plataforma de gestión para proyectos arquitectónicos."> <!--Elemento SEO-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Elemento SEO-->
+    <meta name="keywords" content="Arquitectura, database, Architecture, Platform, wm, work, manager, project, proyecto, web, website, gestor, público, public, test"> <!--Elemento SEO-->
 
 	<meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+    <link href="styleMin.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!--Fuente texto-->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <!--Font awesome ext-->
     <script src="https://kit.fontawesome.com/5e20b01124.js" crossorigin="anonymous"></script>
@@ -130,6 +136,16 @@
                 }, "slow");
             });
 
+            //Efecto borde imagenes
+            $("img").mouseover(function(){
+                $(this).css("border-color", "#FAB005");
+            });
+
+            $("img").mouseleave(function(){
+                $(this).css("border-color", "#FFD43B");
+            });
+            
+
             //3 primeros proyectos
 
             $("#proy1").css("opacity", "0");
@@ -156,9 +172,7 @@
                     opacity: 1
                 }, 1200);
             });    
-            }, 800);
-
-            
+            }, 800);            
 
             //Lista de proyectos.
 
@@ -181,31 +195,31 @@
 
             switch(diaSemana) {
                 case 0:
-                    diaSemanaText = "Lunes";    
+                    diaSemanaText = "Domingo";    
                 break;
 
                 case 1:
-                    diaSemanaText = "Martes";   
+                    diaSemanaText = "Lunes";   
                 break;
 
                 case 2:
-                    diaSemanaText = "Miercoles";   
+                    diaSemanaText = "Martes";   
                 break;
 
                 case 3:
-                    diaSemanaText = "Jueves";   
+                    diaSemanaText = "Miercoles";   
                 break;
 
                 case 4:
-                    diaSemanaText = "Viernes";   
+                    diaSemanaText = "Jueves";   
                 break;
 
                 case 5:
-                    diaSemanaText = "Sábado";   
+                    diaSemanaText = "Viernes";   
                 break;
 
                 case 6:
-                    diaSemanaText = "Domingo";   
+                    diaSemanaText = "Sábado";   
                 break;
 
                 default:
@@ -303,7 +317,7 @@
             function localizar2() {
                 $.ajax({
                         type: "GET",
-                        url: 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitud + '&lon=' +
+                        url: 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitud + '&lon=' +
                             longitud + "&units=metric&appid=9f50a805aa0089a1edd1829a5db029f0",
                         dataType: "jsonp"
                     })
@@ -405,7 +419,7 @@
 
                 $('<img/>', {
                     id: "img4",
-                    src: "img/edificioGal1.jpg"
+                    src: "img/edificioGal4.jpg"
                 }).appendTo('#linkImg4');
 
                 $("#galPrin a").fancybox({
@@ -457,7 +471,7 @@
                 <?php
                 }else{
                 ?>
-                <a href="contactoNoUser.php?p=Contacto"><li><label class="fas fa-address-book"></label> Contacto</li></a>
+                <a href="contactoNoUser.php?p=Contacto"><li><label class="fas fa-phone-alt"></label> Contacto</li></a>
                 <?php    
                 }
                 ?>
@@ -504,7 +518,7 @@
                 <?php
                 }else{
                 ?>
-                <a href="contactoNoUser.php?p=Contacto"><li><label class="fas fa-address-book"></label> Contacto</li></a>
+                <a href="contactoNoUser.php?p=Contacto"><li><label class="fas fa-phone-alt"></label> Contacto</li></a>
                 <?php    
                 }
                 ?>
@@ -516,7 +530,7 @@
                 if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true){
             ?>
 
-                <h2 class="nombreUser"><a><label class="fas fa-user iconoUser"></label><?php echo ucfirst($_SESSION['nombre']) ?></a></h2>
+                <h2 class="nombreUser"><a><label class="fas fa-user iconoUser"></label> <?php echo ucfirst($_SESSION['nombre']) ?></a></h2>
 
                 <h2 class="logo"><a href="#">WM</a></h2>
 

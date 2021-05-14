@@ -55,7 +55,7 @@ $contId = 1;
 				
 				<div class="descProyecto">
                     <h3>Descripción:</h3>
-                    <p><?php echo $arrayDatos[$cont1][1] ?></p>
+                    <p style="font-size:20px"><?php echo $arrayDatos[$cont1][1] ?></p>
                 </div>
 			</article>
 

@@ -84,7 +84,7 @@ if(isset($_POST['crearProyecto'])){
 
     <div>
         <label>Descripción (200 char max): </label>
-        <textarea name="descripcion"><?php echo $descripcion ?></textarea>
+        <textarea name="descripcion" class="formTextarea" rows="9" cols="47"><?php echo $descripcion ?></textarea>
         <?php if($errorDescripcion != ""){echo "<p>".$errorDescripcion."</p>";} ?>
     </div>
 

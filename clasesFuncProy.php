@@ -139,7 +139,7 @@ class Proyecto{
         $arrayMulti = [];
 
         $conexion = Conexion::conectarBD();
-        $sql = "SELECT * FROM proyectos LIMIT 3";
+        $sql = "SELECT * FROM proyectos ORDER BY ID DESC LIMIT 3";
 
         $result = $conexion->query($sql);
 

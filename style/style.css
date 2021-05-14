@@ -1,0 +1,607 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: url(img/fondo2.jpg) repeat fixed 100%;  
+}
+
+/*
+=============
+VERSIÓN MÓVIL
+=============
+*/
+
+/*HEADER*/
+
+header nav{
+    background-color: #183153;
+    display: flex;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    border-bottom: solid 4px #001C40;
+}
+
+.menuTitulo{
+    display: none;
+}
+
+.iconoMenu{
+    font-size: 30px;
+
+}
+
+.iconoMenu:active{
+    color: #FAB005;
+}
+
+.menuMov{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #FFD43B;
+}
+
+.menuMov:hover{
+    color: #FAB005;
+}
+
+.menuMov h2{
+    font-size: 1.6em;
+    padding-left: 0.5em;
+}
+
+ul{
+    list-style: none;
+    background-color: lightgray;
+}
+
+.menu1mov{
+    width: 8.5em;
+    font-weight: bold;
+    font-size: 17px;
+    float: left;
+    position: fixed;
+    margin-top: 3.7em;
+    border-bottom: 3px solid #183153;
+    border-right: 3px solid #183153;
+}
+
+.menu1mov a{
+    color: #FFD43B;
+    text-decoration: none;
+}
+
+.menu1mov li{
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    background-color: #001C40;
+}
+
+.menu1mov li:hover{
+    color: #FAB005;
+    background-color: #183153;
+}
+
+.menu1{
+    display: none;
+}
+
+.menu2{
+    display: none;
+}
+
+/*Menú header inferior movil*/
+.menuMovInf{
+    position: fixed;
+    padding: 0.5em;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFD43B;
+    background-color: #183153;
+    border-top: #001C40 solid 5px;
+}
+
+.menuMovInf a{
+    color: #FFD43B;
+    text-decoration: none;
+}
+
+.menuMovInf a:hover{
+    color: #FAB005;
+}
+
+.nombreUser{
+    font-size: 20px;
+}
+
+.iconoUser{
+    font-size: 30px;
+}
+.logo{
+    font-size: 40px;
+    border-bottom: solid 5px #FFD43B;
+    border-radius: 10px;
+    margin-right: 0.75em;
+}
+
+.logo:hover{
+    border-bottom: solid 5px #FAB005;
+}
+
+.login-register{
+    font-size: 20px;
+    margin-right: 1em;
+}
+
+/*Invisible*/
+.invis{
+    display: none;
+}
+
+
+/*BODY*/
+
+main h1{
+    color: #FFD43B;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.4em;
+    padding-top: 2.4em;
+    padding-bottom: 0.5em;
+    text-shadow: 3px 3px #9c6e00;
+    font-size: 35px;
+}
+
+.proyecto img{
+    border: 6px solid #FFD43B;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+section:first-child{
+    margin-top: 0px;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #05234d;
+    padding: 2em;
+    border-top: #001C40 solid 4px;
+    border-bottom: #001C40 solid 4px;
+    margin-bottom: 8em;
+}
+
+
+article h2{
+    padding: 0.4em;
+    color: #FFD43B;
+}
+
+article p{
+    color: white;
+    font-weight: bold;
+    
+}
+
+.descProyecto{
+    color: #FFD43B;
+}
+
+/*Lista de proyectos*/
+.listaProyectos{
+    display: flex;
+    border-top: #001C40 solid 6px;
+    border-bottom: #001C40 solid 6px;
+    color: #FFD43B;
+    background-color: #183153;
+    padding: 2em;
+    margin: auto;
+    margin-bottom: 5em;
+    overflow-x: auto;
+    font-weight: bold;
+}
+
+.listaProyectos table{
+    border: solid 4px #001C40;
+    border-radius: 3px;
+    box-shadow: 4px 4px #05234d;
+    
+}
+
+.listaProyectos table td{
+    padding: 1em;
+    border: #FAB005 3px solid;
+}
+.encaTabla{
+    background-color: #FAB005;
+    color: #001C40;
+    text-align: center;
+}
+
+.botonVerProy{
+    border-radius: 10px;
+    background-color: #FFD43B;
+    padding: 0.75em;
+    text-decoration: none;
+    color: #05234d;
+    font-size: 18px;
+    box-shadow: 1.5px 2px #9c6e00;
+}
+
+.botonVerProy:hover{
+    background-color: #FAB005;
+    box-shadow: 1.5px 2px #FFD43B;
+}
+
+.center{
+    text-align: center;
+}
+
+.center input{
+    transform: scale(2);
+}
+
+.center label{
+    color: #FAB005;
+    font-size: 30px;
+}
+
+.botonEliminar{
+    border-color: #FFD43B;
+    border-radius: 10px;
+    background-color: #FFD43B;
+    padding: 0.7em;
+    text-decoration: none;
+    color: #05234d;
+    font-size: 18px;
+    font-weight: bolder;
+    box-shadow: 1.5px 2px #9c6e00;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+.botonEliminar:hover{
+    background-color: #FAB005;
+    border-color: #FAB005;
+    box-shadow: 1.5px 2px #FFD43B;
+}
+
+.botonCrear1{
+    padding: 0.85em;
+    box-shadow: 2px 3px #9c6e00;
+    margin-left: 1em;
+}
+
+/*Formulario creacion proyecto*/
+.formTextarea{
+    padding: 0.5em;
+    color: #05234d;
+    font-weight: bold;
+    font-size: 16px;
+    border: #FFD43B solid 4px;
+    border-radius: 7px;
+    box-shadow: 1.5px 2px #9c6e00;
+}
+
+/*Formulario registro*/
+.formRegistro{
+    display: flex;
+    flex-direction: column;
+    border-top: #001C40 solid 6px;
+    border-bottom: #001C40 solid 6px;
+    padding: 2em;
+    margin: auto;
+    margin-bottom: 5em;
+    color: #FFD43B;
+    background-color: #183153;
+    font-weight: bold;
+}
+
+.formRegistro div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.formRegistro div label{
+    padding: 0.2em;
+}
+
+.formRegistro div p{
+    color: red;
+    font-size: 15px;
+    padding: 0.1em;
+}
+
+.formRegistro div input{
+    padding: 0.5em;
+    color: #05234d;
+    font-weight: bold;
+    font-size: 16px;
+    border: #FFD43B solid 4px;
+    border-radius: 7px;
+    box-shadow: 1.5px 2px #9c6e00;
+}
+
+.botonEnviar{
+    font-weight: bold;
+    background-color: #FFD43B;
+    margin-top: 1.25em;
+    box-shadow: 5px 10px #9c6e00;
+}
+
+.botonEnviar:hover{
+    background-color: #FAB005;
+    border-color: #FAB005;
+    box-shadow:#FFD43B;
+}
+/*Formulario inicio sesión*/
+.formInicioSes{
+    margin-bottom: 6em;
+}
+
+/*FOOTER*/
+.footerIcons{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 55px;
+    background-color: #343A40;
+    padding: 0.5em;
+}
+
+.footerText1{
+    display: none;
+}
+
+.footerIcons a{
+    color: white;
+}
+
+.footerIcons label{
+    padding: 0.35em;
+    padding-top: 0;
+}
+
+.footerIcons label:hover{
+    color: #FAB005;
+}
+
+.footerInfo{
+    color: white;
+    background-color: #212529;
+    margin-bottom: 4.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    font-weight: bold;
+}
+
+.footerInfoSub1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5em;
+}
+
+.footerInfoSub1 span{
+    padding: 0.5em;
+}
+
+.footerInfoSub1 a{
+    color: #FAB005;
+    text-decoration: none;
+}
+
+.footerInfoSub2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 0.20em;
+    padding-bottom: 2.5em;
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+}
+
+/*social*/
+.social{
+    color: white;
+    font-size: 40px;
+    padding-right: 1em;
+}
+
+.social:hover{
+    color: #FAB005;
+}
+
+/*
+==========
+VERSIÓN PC
+==========
+*/
+
+@media (min-width:1366px){
+    .menuMovInf{
+        display: none;
+    }
+
+    .menu1mov{
+        display: none;
+    }
+
+    .menuMov{
+        display: none;
+    }
+
+    .menu1{
+        display: flex;
+    }
+
+    .menu1 li{
+        padding: 34px;
+        font-size: 1.25vw;
+        font-weight: bold;
+        background-color: #183153;
+        color: #FFD43B;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .menu1 a{
+        text-decoration: none;
+    }
+
+    .menu1 li:hover{
+        background-color: #05234d;
+        text-shadow: 2px 2px #b88101;
+    }
+
+    header nav{
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu2{
+        display: flex;
+    }
+
+    .menu2 li{
+        padding: 34px;
+        font-size: 1.25vw;
+        font-weight: bold;
+        background-color: #183153;
+        color: #FFD43B;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        flex-wrap: nowrap;
+    }
+
+    .menu2 a{
+        text-decoration: none;
+    }
+
+    .menu2 li:hover{
+        background-color: #05234d;
+        text-shadow: 2px 2px #b88101;
+    }
+
+    .menuTitulo{
+        display: block;
+        position: absolute;
+        left: 46%;
+        text-align: center;
+        font-weight: bold;
+        color: #FFD43B;   
+    }
+
+    .menuTitulo h1{
+        font-size: 3vw;
+        border-left: #FFD43B solid 4px;
+        border-right: #FFD43B solid 4px;
+        border-radius: 10px;
+    }
+
+    .menuTitulo h2{
+        font-size: 0.9vw;
+    }
+
+    /*BODY*/
+
+    /*Apartados del inicio*/
+    main h1{
+        padding-top: 2.75em;
+        text-decoration: none;
+        font-size: 45px;
+        text-shadow: 3px 3px #9b6d02;
+    }
+
+    article{
+        margin: 3em;
+        margin-top: 0;
+        border: solid 5px #001C40;
+        border-radius: 20px;
+        flex-direction: row;
+    }
+
+    article h2{
+        width: 8em;
+    }
+
+    article img{
+        margin-right: 1em;
+    }
+
+    .proyecto img{
+        height: 250px;
+        width: 250px;
+        min-width: 250px;
+        min-height: 250px;
+    }
+
+    .descProyecto{
+        padding: 1.5em;
+    }
+
+    .descProyecto h3{
+        color: #FFD43B;
+        font-size: 20px;
+    }
+
+
+    
+    /*Formulario registro*/
+    .formRegistro{
+        border: 5px solid #05234d;
+        border-radius: 15px;
+        width: 25%;
+    }
+
+    /*Formulario inicio sesión*/
+    .formInicioSes{
+        margin-bottom: 10em;
+    }
+
+    /*Lista de proyectos*/
+    .listaProyectos{
+        margin: 3em;
+        margin-top: 0;
+        margin-bottom: 15em;
+        border: solid 5px #001C40;
+        border-radius: 20px;
+    }
+
+    /*FOOTER*/
+    .footerInfo{
+        margin-bottom: 0;
+        padding-bottom: 3.5em;
+    }
+
+    .footerText1{
+        display: flex;
+        justify-content: center;
+        padding: 0.3em;
+        padding-top: 1em;
+        color: white;
+        background-color: #343A40;
+        font-weight: bold;
+    }
+
+}

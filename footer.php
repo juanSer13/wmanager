@@ -10,8 +10,7 @@
 
         <div class="footerInfo">
             <div class="footerInfoSub1">
-                <span>&#169; Workman Manager, Inc</span>
-                <span><a href="#"><label class="fas fa-user-secret"></label>Terminos y privacidad</a></span>
+                <span><a>&#169; Workman Manager, Inc</a></span>
             </div>
 
             <br>

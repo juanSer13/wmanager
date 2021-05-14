@@ -5,7 +5,7 @@ Class Conexion{
 	public static function conectarBD(){
 
 	//Declaración aquí - la funcion no recorre el código anterior
-	$bd = "wmanager";
+	$bd = "wmanager_db";
 	$servidor = "localhost";
 	$usuario = "root";
 	$password = "";

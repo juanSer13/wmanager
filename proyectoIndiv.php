@@ -12,7 +12,7 @@ if(isset($_GET['el'])){
 
 ?>
 
-<main>
+<main id="proy1">
 
 		<h1 class="tituloApartado" id="h1">Proyecto eliminado</h1>
 
@@ -34,7 +34,7 @@ if(isset($_GET['el'])){
 }else{
 ?>
 
-<main>
+<main id="proy1">
 
 <h1 class="tituloApartado" id="h1"><?php echo $arrayDatos[0][0] ?></h1>
 
@@ -71,8 +71,17 @@ if(isset($_GET['el'])){
 
             <?php
                 if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true && ($usuario1->esAdmin($_SESSION['nombre']) == 2)){
+                    $_SESSION['nombreProy'] = $arrayDatos[0][0];
+                    $_SESSION['descripProy'] = $arrayDatos[0][1];
+                    $_SESSION['fechaProy'] = $arrayDatos[0][2];
+                    $_SESSION['presupProy'] = $arrayDatos[0][3];
+                    $_SESSION['nomCreProy'] = $arrayDatos[0][4];
+                    $_SESSION['estadoProy'] = $arrayDatos[0][5];
+
             ?>
             <a href="proyectoIndiv.php?p=<?php echo $arrayDatos[0][0] ?>&el=<?php echo $arrayDatos[0][0] ?>" class="botonEliminar">Eliminar</a>
+            <br><br><br>
+            <a href="pdfOut.php?nombreProy=<?php echo $arrayDatos[0][0] ?>&descripProy=<?php echo $arrayDatos[0][1] ?>&fechaProy=<?php echo $arrayDatos[0][2] ?>&presupProy=<?php echo $arrayDatos[0][3] ?>&nomCreProy=<?php echo $arrayDatos[0][4] ?>&estadoProy=<?php echo $arrayDatos[0][5] ?>" class="botonEliminar" target="_blank">Sacar PDF</a>
             <?php
                 }
             ?>

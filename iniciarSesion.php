@@ -17,7 +17,7 @@ if(isset($_SESSION["haylog"]) && $_SESSION["haylog"] === true){
 ?>
 
 
-<main>
+<main id="proy1">
 
 		<h1 class="tituloApartado" id="h1">Iniciar sesión</h1>
 
