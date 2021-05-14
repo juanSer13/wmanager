@@ -1,52 +1,110 @@
 <?php
 require("header.php");
 
+// Obetener los datos de la BDD como un array
+$proyecto1 = new Proyecto();
+$usuario1 = new Usuario();
+// Limita de registros por página
 
+$arrayDatos = $proyecto1->getTodos();
+
+if(sizeof($arrayDatos) > 0){
 ?>
 
-    <main>
+<main>
+
+<h1 class="tituloApartado">Lista de proyectos</h1>
+
+<div class="listaProyectos">
+    
+    <form>
+
+        <table>
+            <tr class="encaTabla">
+                <td>NOMBRE</td>
+                <td min-width="300px">DESCRIPCIÓN</td>
+                <td>INICIO</td>
+                <td>PRESUPUESTO</td>
+                <td>VER</td>
+            </tr>
+
+            <?php
+            for($cont1 = 0 ; $cont1 < sizeof($arrayDatos) ; $cont1++){
+            ?>
+
+            <tr>
+                <td><?php echo $arrayDatos[$cont1][0] ?></td>
+                <td><?php echo $arrayDatos[$cont1][1] ?></td>
+                <td class="center"><?php echo $arrayDatos[$cont1][2] ?></td>
+                <td class="center"><?php echo $arrayDatos[$cont1][3]."€" ?></td>
+                <td><a href="proyectoIndiv.php?p=<?php echo $arrayDatos[$cont1][0]?>" class="botonVerProy">VER</a></td>
+            </tr>
+
+            <?php
+            }
+            ?>
+
+    </table>
+
+    <?php
+    if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true && ($usuario1->esAdmin($_SESSION['nombre']) == 2)){
+    ?>
+
+    <br><br>  
+    <a href="crearProyecto.php?p=Crear proyecto" class="botonEliminar botonCrear1">Crear nuevo proyecto</a>
+
+    <?php
+    }
+    ?>
+    </form>
+
+    
+</div>
+
+</main>
+
+<?php
+}else{
+?>
+
+<main>
 
 		<h1 class="tituloApartado">Lista de proyectos</h1>
 
-        <div class="listaProyectos">
-            
-            <form>
+        <form class="formRegistro formInicioSes" method="POST">
+            <div>
+                <p style="text-align:center;color:yellow;"><?php if(isset($_SESSION['nombre'])){echo "No hay proyectos que mostrar actualmente, solo los administradores pueden crear nuevos proyectos.";} ?></p>
+            </div>
 
-                <table>
-                    <tr class="encaTabla">
-                        <td>NOMBRE</td>
-                        <td min-width="300px">DESCRIPCIÓN</td>
-                        <td>REALIZADO</td>
-                        <td>ELIMINAR</td>
-                        <td>VER</td>
-                    </tr>
-                    <tr>
-                        <td>Proyecto hola hola hola hola hla</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, corporis quis autem laboriosam inventore enim veritatis aspernatur, quos debitis, iure neque dolor odio vel porro sint incidunt ea delectus doloremque!</td>
-                        <td class="center"><label class="fas fa-times"></label></td>
-                        <td class="center"><input type="checkbox"></td>
-                        <td><a href="proyectoIndiv.php?p=Proyecto" class="botonVerProy">VER</a></td>
-                    </tr>
-                    <tr>
-                        <td>Proyecto hola 2</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, corporis quis autem laboriosam inventore enim veritatis aspernatur, quos debitis, iure neque dolor odio vel porro sint incidunt ea delectus doloremque!</td>
-                        <td class="center"><label class="fas fa-check"></label></td>
-                        <td class="center"><input type="checkbox"></td>
-                        <td><a href="proyectoIndiv.php?p=Proyecto" class="botonVerProy">VER</td>
-                    </tr>
-            </table>
+            <?php
+            if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true && ($usuario1->esAdmin($_SESSION['nombre']) == 2)){
+            ?>
+            <div>
+                <a href="crearProyecto.php?p=Crear proyecto" class="botonEliminar">Crear nuevo proyecto</a>
+            </div>
+            <?php
+            }else{
+            ?>
+            <div>
+                <a href="registro.php?p=Registro" class="botonEliminar">Registrarse</a>
+            </div>
+            <?php
+            }
+            ?>
+        </form>
 
-            <input type="submit" value="Eliminar proyectos seleccionados" class="botonEliminar">   
-            <a href="crearProyecto.php?p=Crear proyecto" class="botonEliminar botonCrear1">Crear nuevo proyecto</a>
+        <br><br><br><br>
+        <br><br><br><br>
+        
+</main>
 
-            </form>
 
-            
-        </div>
+<?php
+}
 
-		
+?>
 
-	</main>
+
 
 
 <?php

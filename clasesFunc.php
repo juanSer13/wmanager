@@ -269,5 +269,43 @@ class Usuario{ //El objeto que almacena los datos
 
     }
 
+	function getUnUsuario($indice1){ //Esta función recoge solo un proyecto.
+        $arrayMulti = [];
+
+        $conexion = Conexion::conectarBD();
+        $sql = "SELECT * FROM usuarios WHERE nombre='$indice1'";
+
+        $result = $conexion->query($sql);
+        
+        if($result->num_rows > 0){
+
+            while($row = $result->fetch_assoc()){
+                $arrayMulti[0][0] = $row["nombre"];
+                $arrayMulti[0][1] = $row["email"];
+                $arrayMulti[0][2] = $row["edad"];
+                $arrayMulti[0][3] = $row["tipo"];
+            }
+        }
+
+        Conexion::desconectarBD($conexion);	
+        return $arrayMulti;
+    }
+
+	function esAdmin($indice1){ //Comprueba si el usuario es administrador.
+        $resultNombre = 1;
+
+        $conexion = Conexion::conectarBD();
+        $sql ="SELECT "."*". " FROM usuarios WHERE nombre='$indice1'";
+        $resultadoquery = $conexion->query($sql);
+
+        while ($fila = $resultadoquery->fetch_assoc()){
+            $resultNombre = $fila['tipo'];
+            
+        }
+
+        Conexion::desconectarBD($conexion);
+        return $resultNombre;
+    }
+
 }
 ?>

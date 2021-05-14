@@ -2,6 +2,7 @@
 require("header.php");
 
 $proyecto1 = new Proyecto();
+$usuario1 = new Usuario();
 
 //Variables del objeto
 $idUser ="";
@@ -43,7 +44,7 @@ if(isset($_POST['crearProyecto'])){
         $errorDescripcion = "*La descripción introducida no es válida";
     }
 
-    if($errorNombreProyecto == "" && $errorPresupuesto == ""){
+    if($errorNombreProyecto == "" && $errorPresupuesto == "" && $errorDescripcion == ""){
         if($proyecto1->proyectoExiste()){
             $errorExiste = "*El proyecto ya existe en la BDD";
         }else{
@@ -57,6 +58,12 @@ if(isset($_POST['crearProyecto'])){
 
 }
 ?>
+
+<?php
+    if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true && ($usuario1->esAdmin($_SESSION['nombre']) == 2)){
+?>
+
+
 
 <main>
 
@@ -76,7 +83,7 @@ if(isset($_POST['crearProyecto'])){
     </div>
 
     <div>
-        <label>Descripción (300 char max): </label>
+        <label>Descripción (200 char max): </label>
         <textarea name="descripcion"><?php echo $descripcion ?></textarea>
         <?php if($errorDescripcion != ""){echo "<p>".$errorDescripcion."</p>";} ?>
     </div>
@@ -97,6 +104,31 @@ if(isset($_POST['crearProyecto'])){
 
 </main>
 
+<?php
+    }else{
+?>
+
+<main>
+
+		<h1 class="tituloApartado">Crear proyecto</h1>
+
+        <form class="formRegistro formInicioSes" method="POST">
+            <div>
+                <p style="style='color:red'"><?php echo "El usuario no tiene permiso para crear proyectos." ?></p>
+            </div>
+            
+            <div class="descProyecto">
+            <a href="index.php?p=Inicio" class="botonEliminar">Volver al inicio</a>
+            </div>
+        </form>
+
+        <br><br><br>
+        <br><br><br>
+</main>
+
+<?php
+    }
+?>
 
 <?php
 require("footer.php");

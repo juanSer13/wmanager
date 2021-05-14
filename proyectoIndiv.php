@@ -1,41 +1,73 @@
 <?php
 require("header.php");
+
+// Obetener los datos de la BDD como un array
+$proyecto1 = new Proyecto();
+$arrayDatos = $proyecto1->getUnProyecto($_GET['p']);
+
+if(isset($_GET['el'])){
+    $proyecto1->borrarProyecto($_GET['el']);
+
+
 ?>
 
 <main>
 
-<h1 class="tituloApartado">Proyecto hola</h1>
+		<h1 class="tituloApartado">Proyecto eliminado</h1>
+
+        <form class="formRegistro formInicioSes" method="POST">
+            <div>
+                <p style="style='color:green'"><?php if(isset($_SESSION['nombre'])){echo "El proyecto ".$_GET['el']." se ha eliminado con éxito";} ?></p>
+            </div>
+            
+            <div class="descProyecto">
+            <a href="listaProyectos.php?p=Proyectos" class="botonEliminar">Volver a la lista</a>
+            </div>
+        </form>
+
+        <br><br><br>
+        <br><br><br>
+</main>
+
+<?php
+}else{
+?>
+
+<main>
+
+<h1 class="tituloApartado"><?php echo $arrayDatos[0][0] ?></h1>
 
     <section>
         <article class="proyecto">
-            <img src="img/breta1.jpeg">
+            <img src="img/edificio2.jpg">
             <br>
             <div class="descProyecto">
                 <h3>Descripción:</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?
-                </p>
-
-                <br>
-                <h3>Nombre creador:</h3>
-                <p>Pepe jose juan</p>
+                <p><?php echo $arrayDatos[0][1]?></p>
 
                 <br>
                 <h3>Fecha inicio: </h3>
-                <p>10/12/2000</p>
+                <p><?php echo $arrayDatos[0][2] ?></p>
+
+                <br>
+                <h3>Precio: </h3>
+                <p><?php echo $arrayDatos[0][3]."€" ?></p>
+
+                <br>
+                <h3>Nombre creador:</h3>
+                <p><?php echo $arrayDatos[0][4] ?></p>
 
                 <br>
                 <h3>Estado:</h3>
-                <p>Finalizado</p>
+                <p><?php echo ucfirst($arrayDatos[0][5]) ?> </p>
                 
             </div>
 
             <br><br>
             <div class="descProyecto">
-            <a href="listaProyectos.php?p=Proyectos" class="botonEliminar botonCrear1">Volver</a>
+            <a href="listaProyectos.php?p=Proyectos" class="botonEliminar">Volver</a>
+            <br><br><br>
+            <a href="proyectoIndiv.php?p=<?php echo $arrayDatos[0][0] ?>&el=<?php echo $arrayDatos[0][0] ?>" class="botonEliminar">Eliminar</a>
             </div>
             
 
@@ -43,9 +75,12 @@ require("header.php");
         
     </section>
 
-
-
 </main>
+
+<?php    
+}
+?>
+
 
 <?php
 require("footer.php");
