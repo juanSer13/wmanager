@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: #515E7B;
+    background-image: url(img/fondopantalla.jpg);
+    background-repeat: repeat;
 }
 
 /*HEADER*/
@@ -14,6 +15,9 @@ header nav{
     background-color: #183153;
     display: flex;
     padding: 1em;
+    position: fixed;
+    width: 100%;
+    border-bottom: solid 4px #001C40;
 }
 
 header h1{
@@ -41,7 +45,7 @@ header h1{
 }
 
 .menuMov h2{
-    font-size: 1.5em;
+    font-size: 1.6em;
     padding-left: 0.5em;
 }
 
@@ -55,7 +59,8 @@ ul{
     font-weight: bold;
     font-size: 17px;
     float: left;
-    position: absolute;
+    position: fixed;
+    margin-top: 3.7em;
 }
 
 .menu1mov a{
@@ -87,12 +92,15 @@ ul{
 /*Menú header inferior movil*/
 .menuMovInf{
     position: fixed;
+    padding: 0.5em;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #FFD43B;
+    background-color: #183153;
+    border-top: #001C40 solid 5px;
 }
 
 .nombreUser{
@@ -112,4 +120,45 @@ ul{
     font-size: 20px;
 }
 
+/*Invisible*/
+.invis{
+    display: none;
+}
+
+
 /*BODY*/
+
+main h1{
+    color: #001C40;
+    text-align: center;
+    padding: 0.4em;
+    padding-top: 2.5em;
+    background-color: #63E6BE
+    ;
+}
+
+.proyecto img{
+    border: 3px solid #FFD43B;
+    border-radius: 10px;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #05234d;
+    padding: 1em;
+    border-top: #001C40 solid 4px;
+    border-bottom: #001C40 solid 4px;
+    margin-bottom: 3em;
+}
+
+article h2{
+    padding: 0.4em;
+    color: #FFD43B;
+}
+
+article p{
+    color: white;
+    font-weight: bold;
+    
+}
