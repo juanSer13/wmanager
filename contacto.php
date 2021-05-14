@@ -12,7 +12,7 @@ if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true){
 
 <main>
 
-<h1 class="tituloApartado">Usuario</h1>
+<h1 class="tituloApartado" id="h1">Usuario</h1>
 
     <section>
         <article class="proyecto">
@@ -60,7 +60,7 @@ if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true){
 
 <main>
 
-		<h1 class="tituloApartado">Usuario</h1>
+		<h1 class="tituloApartado" id="h1">Usuario</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>

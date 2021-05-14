@@ -3,6 +3,7 @@ require("header.php");
 
 // Obetener los datos de la BDD como un array
 $proyecto1 = new Proyecto();
+$usuario1 = new Usuario();
 $arrayDatos = $proyecto1->getUnProyecto($_GET['p']);
 
 if(isset($_GET['el'])){
@@ -13,7 +14,7 @@ if(isset($_GET['el'])){
 
 <main>
 
-		<h1 class="tituloApartado">Proyecto eliminado</h1>
+		<h1 class="tituloApartado" id="h1">Proyecto eliminado</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>
@@ -35,7 +36,7 @@ if(isset($_GET['el'])){
 
 <main>
 
-<h1 class="tituloApartado"><?php echo $arrayDatos[0][0] ?></h1>
+<h1 class="tituloApartado" id="h1"><?php echo $arrayDatos[0][0] ?></h1>
 
     <section>
         <article class="proyecto">
@@ -67,7 +68,14 @@ if(isset($_GET['el'])){
             <div class="descProyecto">
             <a href="listaProyectos.php?p=Proyectos" class="botonEliminar">Volver</a>
             <br><br><br>
+
+            <?php
+                if(isset($_SESSION['haylog']) && $_SESSION['haylog'] == true && ($usuario1->esAdmin($_SESSION['nombre']) == 2)){
+            ?>
             <a href="proyectoIndiv.php?p=<?php echo $arrayDatos[0][0] ?>&el=<?php echo $arrayDatos[0][0] ?>" class="botonEliminar">Eliminar</a>
+            <?php
+                }
+            ?>
             </div>
             
 

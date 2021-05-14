@@ -543,6 +543,10 @@ VERSIÓN PC
         font-size: 20px;
     }
 
+    /*Galeria fancybox*/
+    .galeria{
+        margin-left: 50%;
+    }
     /*Formulario registro*/
     .formRegistro{
         border: 5px solid #05234d;

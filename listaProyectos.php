@@ -13,13 +13,13 @@ if(sizeof($arrayDatos) > 0){
 
 <main>
 
-<h1 class="tituloApartado">Lista de proyectos</h1>
+<h1 class="tituloApartado" id="h1">Lista de proyectos</h1>
 
-<div class="listaProyectos">
+<div class="listaProyectos" id="listaProyectos">
     
     <form>
 
-        <table>
+        <table id="listaProyectosTabla">
             <tr class="encaTabla">
                 <td>NOMBRE</td>
                 <td min-width="300px">DESCRIPCIÓN</td>
@@ -69,7 +69,7 @@ if(sizeof($arrayDatos) > 0){
 
 <main>
 
-		<h1 class="tituloApartado">Lista de proyectos</h1>
+		<h1 class="tituloApartado" id="h1">Lista de proyectos</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>

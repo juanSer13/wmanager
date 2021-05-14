@@ -19,7 +19,7 @@ if(isset($_SESSION["haylog"]) && $_SESSION["haylog"] === true){
 
 <main>
 
-		<h1 class="tituloApartado">Iniciar sesión</h1>
+		<h1 class="tituloApartado" id="h1">Iniciar sesión</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>
@@ -78,7 +78,7 @@ if(isset($_POST['login'])){
 
     <main>
 
-		<h1 class="tituloApartado">Iniciar sesión</h1>
+		<h1 class="tituloApartado" id="h1">Iniciar sesión</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>

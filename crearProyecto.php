@@ -67,7 +67,7 @@ if(isset($_POST['crearProyecto'])){
 
 <main>
 
-<h1 class="tituloApartado">Crear nuevo proyecto</h1>
+<h1 class="tituloApartado" id="h1">Crear nuevo proyecto</h1>
 
 <form class="formRegistro" method="POST">
     <div>
@@ -110,7 +110,7 @@ if(isset($_POST['crearProyecto'])){
 
 <main>
 
-		<h1 class="tituloApartado">Crear proyecto</h1>
+		<h1 class="tituloApartado" id="h1">Crear proyecto</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>

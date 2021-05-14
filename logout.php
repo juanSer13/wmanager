@@ -7,7 +7,7 @@ if(isset($_SESSION["haylog"]) && $_SESSION["haylog"] === true){
 
 <main>
 
-		<h1 class="tituloApartado">Cerrar sesión</h1>
+		<h1 class="tituloApartado" id="h1">Cerrar sesión</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>
@@ -35,7 +35,7 @@ if(isset($_SESSION["haylog"]) && $_SESSION["haylog"] === true){
 
 <main>
 
-		<h1 class="tituloApartado">Cerrar sesión</h1>
+		<h1 class="tituloApartado" id="h1">Cerrar sesión</h1>
 
         <form class="formRegistro formInicioSes" method="POST">
             <div>

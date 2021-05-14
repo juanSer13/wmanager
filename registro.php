@@ -79,7 +79,7 @@ if(isset($_POST["registro"])){
 
 <main>
 
-<h1 class="tituloApartado">Registro</h1>
+<h1 class="tituloApartado" id="h1">Registro</h1>
 
 <form class="formRegistro" method="POST">
     <div>

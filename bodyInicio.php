@@ -3,11 +3,12 @@
 $proyecto1 = new Proyecto();
 $usuario1 = new Usuario();
 $arrayDatos = $proyecto1->get3Proyecto();
+$contId = 1;
 ?>
 
 <main>
 
-		<h1 class="tituloApartado">Últimos proyectos</h1>
+		<h1 class="tituloApartado" id="h1">Últimos proyectos</h1>
 
         <?php
         if(sizeof($arrayDatos) < 1){
@@ -48,7 +49,7 @@ $arrayDatos = $proyecto1->get3Proyecto();
         <?php
         for($cont1 = 0; $cont1 < count($arrayDatos) ; $cont1++){
         ?>
-            <article class="proyecto">
+            <article class="proyecto" id="proy<?php echo $contId ?>">
 				<img src="img/edificio2.jpg">
                 <h2><?php echo $arrayDatos[$cont1][0] ?></h2>
 				
@@ -59,6 +60,7 @@ $arrayDatos = $proyecto1->get3Proyecto();
 			</article>
 
         <?php
+        $contId++;
         }
         ?>
 		</section>
