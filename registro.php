@@ -1,6 +1,7 @@
 <?php
 require("header.php");
 
+//Variables para almacenar los datos del formulario.
 $nombre="";
 $email="";
 $password="";
@@ -8,6 +9,17 @@ $password2="";
 $edad="";
 $domicilio="";
 $codAdmin="";
+//Variables para almacenar el texto de los errores de formato.
+$errorNombre="";
+$errorEmail="";
+$errorPassword="";
+$errorPassword2="";
+$errorEdad="";
+$errorDomicilio="";
+$errorCodAdmin="";
+//Variables para almacenar el texto de los errores de BDD.
+$errorRepe="";
+$errorInterno="";
 
 if(isset($_POST["registro"])){
     $nombre = htmlspecialchars(trim($_POST["nombre"]));
@@ -20,30 +32,47 @@ if(isset($_POST["registro"])){
 
     $usuario1 = new Usuario($nombre,$email,$password,$password2,$edad,$domicilio,$codAdmin); //objeto a comprobar
 
-    $errorNombre="";
 
+    //Comprobaciones
     if($usuario1->comprobNombre()){
-
-    }else{
-        $errorNombre = "Nombre no es correcto";
+        $errorNombre = "*Nombre no es correcto";
     }
 
-    /*
-    if(($usuario1->comprobForm()) == "sin errores"){ //clase usuario devuelve texto no bool
-        echo "<p style='color:green;'>*No hay errores en el formulario</p>";
+    if($usuario1->comprobEmail()){
+        $errorEmail = "*Email no es correcto";
+    }
+
+    if($usuario1->comprobPass()){
+        $errorPassword = "*Contraseña no es correcta";
+    }
+
+    if($usuario1->comprobPass2()){
+        $errorPassword2 = "*Contraseña 2 no es correcta";
+    }
+
+    if($usuario1->comprobEdad()){
+        $errorEdad = "*Edad no es correcta";
+    }
+
+    if($password != $password2){
+        $errorDosContras = "*Las contraseñas no coinciden";
+    }
+
+    if($usuario1->comprobDomic()){
+        $errorDomicilio = "*Domicilio no es correcto";
+    }
+
+    if($errorNombre == "" && $errorEmail == "" && $errorPassword == "" && $errorPassword2 == "" && $errorDosContras == "" && $errorEdad == "" && $errorDomicilio == ""){
         if($usuario1->emailExistente($email)){
-            echo "<p style='color:red;'>*El correo ya existe en la BDD</p>";
+            $errorRepe = "*El usuario ya existe en la BDD";
         }else{
             if($usuario1->registrarUser()){
-                echo "<h1 color='green'>El usuario " . $nombre . " ha sido registrado con éxito.</h1>";
+                $errorInterno = "El usuario: ".$nombre." se ha registrado con éxito.";
             }else{
-                echo "<p color='red'><b>Ha ocurrido un error a la hora de registrar el usuario.</b></p>";
+                $errorInterno = "*Ha ocurrido un error a la hora de registrar el usuario";
             }
         }
-    }else{
-        echo $usuario1->comprobForm();
-    }*/
-
+    }
 
 }
 ?>
@@ -54,41 +83,53 @@ if(isset($_POST["registro"])){
 
 <form class="formRegistro" method="POST">
     <div>
-        <label>Nombre: </label>
-        <input type="text" name="nombre" value="">
-        <p>*Hola, soy un error.</p>
+        <label>Nombre (4 - 25 char): </label>
+        <input type="text" name="nombre" value="<?php echo $nombre ?>">
+        <?php if($errorNombre != ""){echo "<p>".$errorNombre."</p>";} ?>
     </div>
 
     <div>
         <label>Email: </label>
-        <input type="text" name="email" value="">
-        <p>*Hola, soy un error.</p>
+        <input type="text" name="email" value="<?php echo $email ?>">
+        <?php if($errorEmail != ""){echo "<p>".$errorEmail."</p>";} ?>
     </div>
 
     <div>
         <label>Contraseña: </label>
-        <input type="text" name="password" value="">
+        <input type="text" name="password" value="<?php echo $password ?>">
+        <?php if($errorPassword != ""){echo "<p>".$errorPassword."</p>";} ?>
     </div>
 
     <div>
         <label>Repetir contraseña: </label>
-        <input type="text" name="password2" value="">
+        <input type="text" name="password2" value="<?php echo $password2 ?>">
+        <?php if($errorPassword2 != ""){echo "<p>".$errorPassword2."</p>";} ?>
+        <?php if($password != $password2){echo "<p>Las contraseñas no son iguales</p>";} ?>
     </div>
 
     <div>
         <label>Edad: </label>
-        <input type="text" name="edad" value="">
+        <input type="text" name="edad" value="<?php echo $edad ?>">
+        <?php if($errorEdad != ""){echo "<p>".$errorEdad."</p>";} ?>
     </div>
 
     <div>
         <label>Domicilio: </label>
-        <input type="text" name="domicilio" value="">
+        <input type="text" name="domicilio" value="<?php echo $domicilio ?>">
+        <?php if($errorDomicilio != ""){echo "<p>".$errorDomicilio."</p>";} ?>
     </div>
     
     <div>
         <label>Código administrador (opcional): </label>
-        <input type="text" name="codAdmin" value="">
+        <input type="text" name="codAdmin" value="<?php echo $codAdmin ?>">
     </div>
+
+    <div>
+        <?php echo "<p style='color:red;'>".$errorRepe."</p>" ?>
+        <?php echo "<p style='color:green;'>".$errorInterno."</p>" ?>
+    </div>
+
+    
 
     <div>
         <input type="submit" class="botonEnviar" name="registro" value="Registrar">

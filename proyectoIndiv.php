@@ -35,7 +35,7 @@ require("header.php");
 
             <br><br>
             <div class="descProyecto">
-            <a href="listaProyectos.php?p=listaProyectos" class="botonEliminar botonCrear1">Volver</a>
+            <a href="listaProyectos.php?p=Proyectos" class="botonEliminar botonCrear1">Volver</a>
             </div>
             
 
