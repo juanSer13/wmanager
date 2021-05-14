@@ -4,8 +4,10 @@
 	<title>Workman Manager: Inicio</title>
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5e20b01124.js" crossorigin="anonymous"></script>
 </head>
 
@@ -22,12 +24,15 @@
             </div>
 
             <ul class="menu1"> <!--Menú de navegación PC-->
-                <li>Inicio</li>
-                <li>Proyectos</li>
-                <li>Contacto</li>
+                <a href="#"><li><label class="fas fa-home"></label> Inicio</li></a>
+                <a href="#"><li><label class="fas fa-tasks"></label> Proyectos</li></a>
+                <a href="#"><li><label class="fas fa-address-book"></label> Contacto</li></a>
             </ul>
 
-            <h1>Workman Manager</h1> <!--Titulo PC-->
+            <div class="menuTitulo">
+                <h1>WM</h1>
+                <h2>Workman Manager</h2>
+            </div> <!--Titulo PC-->
 
             <ul class="menu2"> <!--Menú de navegación 2 PC-->
                 <li>Registrarse</li>
@@ -38,18 +43,18 @@
 
         <div> <!--Menú de navegación movil-->
             <ul class="menu1mov ">
-                <a href=""><li><label class="fas fa-home"></label> Inicio</li></a>
-                <a href=""><li><label class="fas fa-tasks"></label> Proyectos</li></a>
-                <a href=""><li><label class="fas fa-address-book"></label> Contacto</li></a>
+                <a href="#"><li><label class="fas fa-home"></label> Inicio</li></a>
+                <a href="#"><li><label class="fas fa-tasks"></label> Proyectos</li></a>
+                <a href="#"><li><label class="fas fa-address-book"></label> Contacto</li></a>
             </ul>
         </div>
 
         <div class="menuMovInf">
-                <h2 class="nombreUser"><label class="fas fa-user iconoUser"></label> USUARIO</h2>
+                <h2 class="nombreUser"><a href=""><label class="fas fa-user iconoUser"></label> USUARIO</a></h2>
 
-                <h2 class="logo">WM</h2>
+                <h2 class="logo"><a href="#">WM</a></h2>
 
-                <h2 class="login-register">LOGIN</h2>
+                <h2 class="login-register"><a href="">LOGIN</a></h2>
         </div>
 
 
@@ -68,10 +73,14 @@
 				<h2>Proyecto hola</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?</p>
 			</article>
-		</section>
-
-        <section>
+		
 			<article class="proyecto">
+				<img src="img/edificio.jpg" width="150px" height="150px">
+				<h2>Proyecto hola</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?</p>
+			</article>
+
+            <article class="proyecto">
 				<img src="img/edificio.jpg" width="150px" height="150px">
 				<h2>Proyecto hola</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae ratione autem dolorum consequuntur ut dolore deserunt minus, officia harum?</p>
@@ -79,6 +88,29 @@
 		</section>
 
 	</main>
+
+    <footer>
+        <div class="footerIcons">
+            <label class="fab fa-html5"></label>
+            <label class="fab fa-css3-alt"></label>
+            <label class="fab fa-js-square"></label>
+            <label class="fab fa-php"></label>
+            <label class="fas fa-database"></label>
+        </div>
+
+        <div class="footerInfo">
+            <div class="footerInfoSub1">
+                <span>&#169; Workman Manager, Inc</span>
+                <span><a href="#"><label class="fas fa-user-secret"></label>Terminos y privacidad</a></span>
+            </div>
+
+            <br>
+            <div class="footerInfoSub2">
+                <span>Página con propósito educativo creada por Juan de Dios Serna 2ºDAW - 2021</span>
+            </div>
+            
+        </div>
+    </footer>
 
 </body>
 </html>
