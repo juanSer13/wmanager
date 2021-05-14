@@ -359,6 +359,10 @@ article p{
     display: none;
 }
 
+.footerIcons a{
+    color: white;
+}
+
 .footerIcons label{
     padding: 0.35em;
     padding-top: 0;

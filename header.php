@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    //require("./lib/conexion.php");
-
+    require("./lib/conexion.php");
+    require("clasesFunc.php");
 
 
 ?>

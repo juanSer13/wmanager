@@ -1,11 +1,11 @@
 <footer>
         <div class="footerText1">Esta página web ha sido creada con:</div>
         <div class="footerIcons">
-            <label class="fab fa-html5"></label>
-            <label class="fab fa-css3-alt"></label>
-            <label class="fab fa-js-square"></label>
-            <label class="fab fa-php"></label>
-            <label class="fas fa-database"></label>
+            <a href="https://html.spec.whatwg.org/" target="_blank"><label class="fab fa-html5"></label></a>
+            <a href="https://lenguajecss.com/" target="_blank"><label class="fab fa-css3-alt"></label></a>
+            <a href="https://www.javascript.com/" target="_blank"><label class="fab fa-js-square"></label></a>
+            <a href="https://www.php.net/" target="_blank"><label class="fab fa-php"></label></a>
+            <a href="https://www.mysql.com/" target="_blank"><label class="fas fa-database"></label></a>
         </div>
 
         <div class="footerInfo">
