@@ -4,10 +4,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    background-color: #515E7B;
+}
+
 /*HEADER*/
 
 header nav{
-    background-color: grey;
+    background-color: #183153;
     display: flex;
     padding: 1em;
 }
@@ -22,13 +26,18 @@ header h1{
 }
 
 .iconoMenu:active{
-    color: white;
+    color: #FAB005;
 }
 
 .menuMov{
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #FFD43B;
+}
+
+.menuMov:hover{
+    color: #FAB005;
 }
 
 .menuMov h2{
@@ -41,7 +50,6 @@ ul{
     background-color: lightgray;
 }
 
-
 .menu1mov{
     width: 8.5em;
     font-weight: bold;
@@ -51,7 +59,7 @@ ul{
 }
 
 .menu1mov a{
-    color: black;
+    color: #FFD43B;
     text-decoration: none;
 }
 
@@ -60,11 +68,11 @@ ul{
     padding-top: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
-    background-color: lightgray;
+    background-color: #001C40;
 }
 
 .menu1mov li:hover{
-    color: white;
+    color: #FAB005;
     background-color: black;
 }
 
@@ -74,6 +82,34 @@ ul{
 
 .menu2{
     display: none;
+}
+
+/*Menú header inferior movil*/
+.menuMovInf{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFD43B;
+}
+
+.nombreUser{
+    font-size: 20px;
+}
+
+.iconoUser{
+    font-size: 30px;
+}
+.logo{
+    font-size: 40px;
+    border-bottom: solid 5px #FFD43B;
+    border-radius: 10px;
+}
+
+.login-register{
+    font-size: 20px;
 }
 
 /*BODY*/
