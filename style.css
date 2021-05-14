@@ -200,13 +200,96 @@ article p{
 }
 
 /*Lista de proyectos*/
+.listaProyectos{
+    display: flex;
+    border-top: #001C40 solid 6px;
+    border-bottom: #001C40 solid 6px;
+    color: #FFD43B;
+    background-color: #183153;
+    padding: 2em;
+    margin: auto;
+    margin-bottom: 5em;
+    overflow-x: auto;
+    font-weight: bold;
+}
+
+.listaProyectos table{
+    border: solid 4px #001C40;
+    border-radius: 3px;
+    box-shadow: 4px 4px #05234d;
+    
+}
+
+.listaProyectos table td{
+    padding: 1em;
+    border: #FAB005 3px solid;
+}
+.encaTabla{
+    background-color: #FAB005;
+    color: #001C40;
+    text-align: center;
+}
+
+.botonVerProy{
+    border-radius: 10px;
+    background-color: #FFD43B;
+    padding: 0.75em;
+    text-decoration: none;
+    color: #05234d;
+    font-size: 18px;
+    box-shadow: 1.5px 2px #9c6e00;
+}
+
+.botonVerProy:hover{
+    background-color: #FAB005;
+    box-shadow: 1.5px 2px #FFD43B;
+}
+
+.center{
+    text-align: center;
+}
+
+.center input{
+    transform: scale(2);
+}
+
+.center label{
+    color: #FAB005;
+    font-size: 30px;
+}
+
+.botonEliminar{
+    border-color: #FFD43B;
+    border-radius: 10px;
+    background-color: #FFD43B;
+    padding: 0.7em;
+    text-decoration: none;
+    color: #05234d;
+    font-size: 18px;
+    font-weight: bolder;
+    box-shadow: 1.5px 2px #9c6e00;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+.botonEliminar:hover{
+    background-color: #FAB005;
+    border-color: #FAB005;
+    box-shadow: 1.5px 2px #FFD43B;
+}
+
+.botonCrear1{
+    padding: 0.85em;
+    box-shadow: 2px 3px #9c6e00;
+    margin-left: 1em;
+}
 
 /*Formulario registro*/
 .formRegistro{
     display: flex;
     flex-direction: column;
     border-top: #001C40 solid 6px;
-    border-bottom: #001C40 solid 6px;;
+    border-bottom: #001C40 solid 6px;
     padding: 2em;
     margin: auto;
     margin-bottom: 5em;
@@ -466,6 +549,15 @@ VERSIÓN PC
     /*Formulario inicio sesión*/
     .formInicioSes{
         margin-bottom: 10em;
+    }
+
+    /*Lista de proyectos*/
+    .listaProyectos{
+        margin: 3em;
+        margin-top: 0;
+        margin-bottom: 15em;
+        border: solid 5px #001C40;
+        border-radius: 20px;
     }
 
     /*FOOTER*/
