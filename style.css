@@ -4,9 +4,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*HEADER*/
+
 header nav{
     background-color: grey;
     display: flex;
+    padding: 1em;
 }
 
 header h1{
@@ -14,12 +17,23 @@ header h1{
 }
 
 .iconoMenu{
-    cursor: pointer;
-    padding: 1em;
+    font-size: 30px;
+
 }
 
-.fa{
-    font-size: 30px;
+.iconoMenu:active{
+    color: white;
+}
+
+.menuMov{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menuMov h2{
+    font-size: 1.5em;
+    padding-left: 0.5em;
 }
 
 ul{
@@ -27,8 +41,31 @@ ul{
     background-color: lightgray;
 }
 
-.menu1mov{
 
+.menu1mov{
+    width: 8.5em;
+    font-weight: bold;
+    font-size: 17px;
+    float: left;
+    position: absolute;
+}
+
+.menu1mov a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu1mov li{
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    background-color: lightgray;
+}
+
+.menu1mov li:hover{
+    color: white;
+    background-color: black;
 }
 
 .menu1{
@@ -38,3 +75,5 @@ ul{
 .menu2{
     display: none;
 }
+
+/*BODY*/

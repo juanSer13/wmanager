@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/a931d94ec7.js"></script>
+    <script src="https://kit.fontawesome.com/5e20b01124.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,9 +15,11 @@
         
 		<nav>
 
-            <label for="botonMenu" class="fa fa-bars iconoMenu"></label>
 
-            <h2>Inicio</h2>
+            <div class="menuMov"> <!--Menú de navegación movil-->
+                <label class="fas fa-bars iconoMenu"></label>
+                <h2>Inicio</h2>
+            </div>
 
             <ul class="menu1"> <!--Menú de navegación PC-->
                 <li>Inicio</li>
@@ -36,11 +38,25 @@
 
         <div> <!--Menú de navegación movil-->
             <ul class="menu1mov">
-                <li>Inicio</li>
-                <li>Proyectos</li>
-                <li>Contacto</li>
+                <a href=""><li><label class="fas fa-home"></label> Inicio</li></a>
+                <a href=""><li><label class="fas fa-tasks"></label> Proyectos</li></a>
+                <a href=""><li><label class="fas fa-address-book"></label> Contacto</li></a>
             </ul>
         </div>
+
+        <nav>
+            <div>
+                <h2>NOMBRE USUARIO</h2>
+            </div>
+
+            <div>
+                <h2>WM</h2>
+            </div>
+
+            <div>
+                <h2></h2>
+            </div>
+        </nav>
 
 
 
